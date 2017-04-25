@@ -1,6 +1,15 @@
 Le 1S Kernel Build mini-Howto
 ===============================
 
+# Automated Method
+
+Command :
+
+sh Halcyon.sh
+
+
+# Manual Method
+
 1. Build
 --------
 
