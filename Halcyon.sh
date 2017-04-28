@@ -69,7 +69,7 @@ echo -e "$yellow***********************************************"
 echo "          Initialising DEFCONFIG        "
 echo -e "***********************************************$nocol"
 
-make -C $PWD O=$PWD/out ARCH=arm64 x500_defconfig
+make -C $PWD O=$PWD/out ARCH=arm64 halcyon_defconfig
 
 echo -e "$yellow***********************************************"
 echo "          Cooking Halcyon!!        "
