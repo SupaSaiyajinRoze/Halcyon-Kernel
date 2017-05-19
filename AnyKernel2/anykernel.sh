@@ -3,7 +3,7 @@
 
 ## AnyKernel setup
 # EDIFY properties
-kernel.string=Halcyon Kernel by ZaMaSu(SupaSaiyajinRoze)
+kernel.string=Psycho Kernel
 do.devicecheck=1
 do.initd=1
 do.modules=0
@@ -12,11 +12,7 @@ device.name1=x500
 device.name2=x3
 device.name3=X500
 device.name4=X3
-device.name5=x507
-device.name6=X507
-device.name7=x507
-device.name8=x509
-device.name9=X509
+device.name5=
 
 # shell variables
 block=/dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/boot;
@@ -48,16 +44,6 @@ append_file init.rc "run-parts" init;
 backup_file init.mt6795.rc;
 insert_line init.mt6795.rc "nodiratime barrier=0" after "mount_all /fstab.tuna" "\tmount ext4 /dev/block/platform/omap/omap_hsmmc.0/by-name/userdata /data remount nosuid nodev noatime nodiratime barrier=0";
 append_file init.mt6795.rc "dvbootscript" init.mt6795;
-
-# init.superuser.rc
-if [ -f init.superuser.rc ]; then
-  backup_file init.superuser.rc;
-  replace_string init.superuser.rc "Superuser su_daemon" "# su daemon" "\n# Superuser su_daemon";
-  prepend_file init.superuser.rc "SuperSU daemonsu" init.superuser;
-else
-  replace_file init.superuser.rc 750 init.superuser.rc;
-  insert_line init.rc "init.superuser.rc" after "on post-fs-data" "    import /init.superuser.rc";
-fi;
 
 # fstab.mt6795
 backup_file fstab.mt6795;
